@@ -7,3 +7,6 @@
 dentro del proyecto hacer: `rm -rf node_modules`
 
 y despues: `bun install`
+
+## Correr la aplicacion:
+`ng serve`
