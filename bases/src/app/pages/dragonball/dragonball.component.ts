@@ -1,0 +1,9 @@
+
+import { Component, signal } from "@angular/core";
+
+@Component({
+  templateUrl: "./dragonball.component.html",
+})
+export class dragonballComponent{
+
+}
