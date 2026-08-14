@@ -2,6 +2,16 @@
 <hr>
 
 <section class="row">
+
+  @if (error()) {
+    <div>
+      <strong>
+        <h3 class="text-danger">Error</h3>
+        <p class="text-danger">Can't create a null character</p>
+      </strong>
+    </div>
+  }
+
   <div class="col-12 col-sm-6">
     <h2>Add: {{ name() }} - {{ power() }}</h2>
 
@@ -24,10 +34,13 @@
     class="form-control"
     placeholder="Power"
     [value]="power()"
-    (input)="power.set(numPower.value)"
+    (input)="power.set(+numPower.value)"
     #numPower>
-
-    <button class="mt-2 btn btn-primary">Add</button>
+  
+    <button
+    class="mt-2 btn btn-primary"
+    (click)="addCharacter()"
+    >Add</button>
   </div>
 
   <div class="col-12 col-sm-6">
