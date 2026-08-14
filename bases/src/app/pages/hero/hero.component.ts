@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, computed, signal } from "@angular/core";
 
 @Component({
   templateUrl: "./hero.component.html"
@@ -25,8 +25,8 @@ export class heroComponent{
     this.age.set(age)
   }
 
-  capitalize(){
+  capitalize = computed(() => {
     return this.name().toUpperCase()
-  }
+  });
 
 }
