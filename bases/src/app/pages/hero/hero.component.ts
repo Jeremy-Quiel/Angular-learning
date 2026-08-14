@@ -1,3 +1,4 @@
+import { UpperCasePipe } from "@angular/common";
 import { Component, computed, signal } from "@angular/core";
 
 @Component({
@@ -6,7 +7,8 @@ import { Component, computed, signal } from "@angular/core";
   dd {
     font-weight: 900;
   }
-  `
+  `,
+  imports: [UpperCasePipe]
 })
 export class heroComponent{
   name = signal("Iron-Man");
