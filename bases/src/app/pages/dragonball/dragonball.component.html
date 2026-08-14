@@ -12,9 +12,9 @@
 
   <div class="col-12 col-sm-6">
     <ol>
-      <li>Goku</li>
-      <li>Veggeta</li>
-      <li>Krilin </li>
+      @for (character of characters(); track character.id) { <!-- track es para el indice de order list (ol) -->
+        <li>{{ character.name }} - <strong>{{ character.power }}</strong></li>
+      }
     </ol>
   </div>
 </section>
