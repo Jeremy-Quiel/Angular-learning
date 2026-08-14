@@ -10,3 +10,6 @@ y despues: `bun install`
 
 ## Correr la aplicacion:
 `ng serve`
+
+## Crear un componenete:
+`ng g c (component)`
