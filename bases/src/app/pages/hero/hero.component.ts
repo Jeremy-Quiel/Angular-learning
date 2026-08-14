@@ -1,5 +1,6 @@
 import { UpperCasePipe } from "@angular/common";
 import { Component, computed, signal } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
   templateUrl: "./hero.component.html",
@@ -8,7 +9,7 @@ import { Component, computed, signal } from "@angular/core";
     font-weight: 900;
   }
   `,
-  imports: [UpperCasePipe]
+  imports: [UpperCasePipe, RouterLink]
 })
 export class heroComponent{
   name = signal("Iron-Man");
