@@ -13,6 +13,7 @@ export class dragonballComponent{
   characters = signal<Character[]>([
     {id:1, name: "Goku", power: 9001},
     {id:2, name: "Veggeta", power: 7000},
-    {id:3, name: "Piccolo", power: 5000}
+    {id:3, name: "Piccolo", power: 5000},
+    {id:4, name: "Yamcha", power: 500}
   ])
 }
