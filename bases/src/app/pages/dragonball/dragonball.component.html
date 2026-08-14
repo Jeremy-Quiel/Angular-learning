@@ -13,7 +13,12 @@
   <div class="col-12 col-sm-6">
     <ol>
       @for (character of characters(); track character.id) { <!-- track es para el indice de order list (ol) -->
-        <li>{{ character.name }} - <strong>{{ character.power }}</strong></li>
+
+        <!-- [class.name_class] hace que se agrege la clase despues del punto si se cumple un condicional-->
+        <li>{{ character.name }} - <strong 
+          [class.text-danger]="character.power > 9000"
+          [class.text-primary]="character.power < 9000"
+          >{{ character.power }}</strong></li>
       }
     </ol>
   </div>
