@@ -1,8 +1,10 @@
 
 import { Component, signal } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
-  templateUrl: "./counter.component.html"
+  templateUrl: "./counter.component.html",
+  imports: [RouterLink]
 })
 export class counterComponent{
   counter = 1;
