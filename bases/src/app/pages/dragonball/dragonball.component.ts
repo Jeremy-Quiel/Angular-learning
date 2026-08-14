@@ -10,6 +10,9 @@ interface Character {
   templateUrl: "./dragonball.component.html",
 })
 export class dragonballComponent{
+  name = signal("Gohan")
+  power = signal("50")
+
   characters = signal<Character[]>([
     {id:1, name: "Goku", power: 9001},
     {id:2, name: "Veggeta", power: 7000},
