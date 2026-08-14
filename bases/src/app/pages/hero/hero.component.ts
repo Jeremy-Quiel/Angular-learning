@@ -1,7 +1,12 @@
 import { Component, computed, signal } from "@angular/core";
 
 @Component({
-  templateUrl: "./hero.component.html"
+  templateUrl: "./hero.component.html",
+  styles:   `
+  dd {
+    font-weight: 900;
+  }
+  `
 })
 export class heroComponent{
   name = signal("Iron-Man");
