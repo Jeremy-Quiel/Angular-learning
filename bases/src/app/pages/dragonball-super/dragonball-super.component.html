@@ -44,24 +44,7 @@
   </div>
 
   <div class="col-12 col-sm-6">
-    <ol>
-      @for (character of characters(); track character.id) { <!-- track es para el indice de order list (ol) -->
-        <!-- @if lo que hace es literalmente crear los elemento si se cumple la condicion -->
-        @if (character.power > 500) {
-          <!-- [class.name_class] hace que se agrege la clase despues del punto si se cumple un condicional-->
-          <li>{{ character.name }} - <strong
-            [class.text-danger]="character.power > 9000"
-            [class.text-primary]="character.power < 9000">
-            {{ character.power }}</strong>
-          </li>
-        } @else {
-          <li><strong><span
-            [class.not-important]>
-            Not important character: </span>
-            ({{ character.name }} - {{ character.power }})
-          </strong></li>
-        }
-      }
-    </ol>
+    <!-- la variable characters de dragonball-character-list es igual a character() de dragonball-super.component.ts -->
+    <dragonball-character-list [characters]="characters()" />
   </div>
 </section>
