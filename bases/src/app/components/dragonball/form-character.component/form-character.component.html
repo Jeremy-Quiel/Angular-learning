@@ -1,0 +1,37 @@
+@if (error()) {
+  <div>
+    <strong>
+      <h3 class="text-danger">Error</h3>
+      <p class="text-danger">Can't create a null character</p>
+    </strong>
+  </div>
+}
+
+<h2>Add: {{ name() }} - {{ power() }}</h2>
+
+<!-- 
+[value] -> es el valor que tendra el input
+(change) -> se hara el evento entre comillas cada vez que se termina de llenar el input
+(input) -> se hara el evento entre comillas cada vez que se haga el minimo cambio dentro del input
+#cont -> es una autoreferencia (constante del objeto input - se puede acceder a todos sus atributos)
+-->
+<input
+type="text"
+class="form-control"
+placeholder="Name"
+[value]="name()"
+(change)="name.set(txtName.value)"
+#txtName>
+
+<input
+type="number"
+class="form-control"
+placeholder="Power"
+[value]="power()"
+(input)="power.set(+numPower.value)"
+#numPower>
+
+<button
+class="mt-2 btn btn-primary"
+(click)="addCharacter()"
+>Add</button>
