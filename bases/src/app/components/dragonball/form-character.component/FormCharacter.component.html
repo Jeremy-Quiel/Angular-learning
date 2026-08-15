@@ -16,22 +16,24 @@
 #cont -> es una autoreferencia (constante del objeto input - se puede acceder a todos sus atributos)
 -->
 <input
-type="text"
-class="form-control"
-placeholder="Name"
-[value]="name()"
-(change)="name.set(txtName.value)"
-#txtName>
+  type="text"
+  class="form-control"
+  placeholder="Name"
+  [value]="name()"
+  (change)="name.set(txtName.value)"
+  #txtName
+>
 
 <input
-type="number"
-class="form-control"
-placeholder="Power"
-[value]="power()"
-(input)="power.set(+numPower.value)"
-#numPower>
+  type="number"
+  class="form-control"
+  placeholder="Power"
+  [value]="power()"
+  (input)="power.set(+numPower.value)"
+  #numPower
+>
 
 <button
-class="mt-2 btn btn-primary"
-(click)="addCharacter()"
+  class="mt-2 btn btn-primary"
+  (click)="addCharacter()"
 >Add</button>

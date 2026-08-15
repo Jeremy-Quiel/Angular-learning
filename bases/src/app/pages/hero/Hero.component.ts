@@ -2,7 +2,7 @@ import { UpperCasePipe } from "@angular/common";
 import { Component, computed, signal } from "@angular/core";
 
 @Component({
-  templateUrl: "./hero.component.html",
+  templateUrl: "./Hero.component.html",
   styles:   `
   dd {
     font-weight: 900;
@@ -10,7 +10,7 @@ import { Component, computed, signal } from "@angular/core";
   `,
   imports: [UpperCasePipe]
 })
-export class heroComponent{
+export class HeroComponent{
   name = signal("Iron-Man");
   age = signal(45);
 

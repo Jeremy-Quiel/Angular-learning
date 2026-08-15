@@ -1,29 +1,29 @@
 import { Routes } from '@angular/router';
-import { counterComponent } from './pages/counter/counter.component';
-import { heroComponent } from './pages/hero/hero.component';
+import { CounterComponent } from './pages/counter/Counter.component';
+import { HeroComponent } from './pages/hero/Hero.component';
 import { _404Component } from './pages/404/404.component';
-import { dragonballComponent } from './pages/dragonball/dragonball.component';
-import { dragonballSuperComponent } from './pages/dragonball-super/dragonball-super.component';
+import { DragonballComponent } from './pages/dragonball/Dragonball.component';
+import { DragonballSuperComponent } from './pages/dragonball-super/Dragonball-Super.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: counterComponent
+    component: CounterComponent
   },
 
   {
     path: 'hero',
-    component: heroComponent
+    component: HeroComponent
   },
 
   {
     path: "dragonball",
-    component: dragonballComponent
+    component: DragonballComponent
   },
 
   {
     path: 'dragonballsuper',
-    component: dragonballSuperComponent
+    component: DragonballSuperComponent
   },
 
   {

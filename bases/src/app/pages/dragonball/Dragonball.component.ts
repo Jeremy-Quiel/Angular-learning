@@ -7,9 +7,9 @@ interface Character {
 }
 
 @Component({
-  templateUrl: "./dragonball.component.html",
+  templateUrl: "./Dragonball.component.html",
 })
-export class dragonballComponent{
+export class DragonballComponent{
   name = signal("Gohan")
   power = signal(50)
 
