@@ -3,7 +3,8 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <dragonball-form-character/>
+    <dragonball-form-character
+    (stronger)="set_stronger($event)"/>
   </div>
 
 
@@ -11,6 +12,9 @@
     <!-- la variable characters de dragonball-character-list es igual a character() de dragonball-super.component.ts -->
     <dragonball-character-list
     title_name = "Character list"
-    [characters]="characters()" />
+    [characters]="characters()"/>
   </div>
 </section>
+
+<h2>Stronger</h2>
+<h3>{{ stronger().id }} - {{ stronger().name }} - {{ stronger().power }}</h3>
