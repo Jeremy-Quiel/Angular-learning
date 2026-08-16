@@ -1,18 +1,20 @@
-import { Component, output, signal} from '@angular/core';
-import { characters_db } from '../../../controller/dragonball/characters.controller';
+import { Component, inject, output, signal} from '@angular/core';
 import { Character } from '../../../interfaces/Character.interface';
+import { DragonballService } from '../../../services/dragonball/Dragonball.service';
 
 @Component({
   selector: 'dragonball-form-character',
-  templateUrl: './form-character.component.html',
+  templateUrl: './FormCharacter.component.html',
 })
 export class FormCharacterComponent {
+  public dragonballService = inject(DragonballService)
+
   name = signal("Jeremy")
   power = signal(10)
 
   error = signal(false)
 
-  characters = characters_db
+  characters = this.dragonballService.characters
 
   stronger = output<Character>()
 
@@ -24,7 +26,13 @@ export class FormCharacterComponent {
 
     this.error.set(false)
 
-    this.characters.update(c => [...c, {id: this.characters().length + 1, name: this.name(), power: this.power() }])
+    let new_character: Character = {
+      id: this.dragonballService.characters().length + 1,
+      name: this.name(),
+      power: this.power()
+    }
+
+    this.dragonballService.addCharacter(new_character)
 
     this.name.set("")
     this.power.set(0)
@@ -36,7 +44,7 @@ export class FormCharacterComponent {
     let goku: Character = {
       id: 100,
       name: "Goku SSJ Dios",
-      power: 999999999999999
+      power: 990000
     }
     return goku
   }

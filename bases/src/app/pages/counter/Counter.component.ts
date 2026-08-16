@@ -2,9 +2,9 @@
 import { Component, signal } from "@angular/core";
 
 @Component({
-  templateUrl: "./counter.component.html",
+  templateUrl: "./Counter.component.html",
 })
-export class counterComponent{
+export class CounterComponent{
   counter = 1;
   counterSignal = signal(1);
 

@@ -6,7 +6,7 @@ import type{ Character } from '../../../interfaces/Character.interface';
 @Component({
   selector: 'dragonball-character-list',
   imports: [],
-  templateUrl: './character-list.component.html',
+  templateUrl: './Character-list.component.html',
 })
 export class CharacterListComponent {
   
