@@ -14,5 +14,11 @@ y despues: `bun install`
 ## Construir aplicacion para produccion
 `ng build`
 
+## Hostear la aplicacion
+`Subir el browser de la carpeta dist a algun hosteador`
+
+## Hosteadores
+`Netlify`
+
 ## Crear un componenete:
 `ng g c (component)`
