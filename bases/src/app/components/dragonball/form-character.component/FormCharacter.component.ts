@@ -27,7 +27,7 @@ export class FormCharacterComponent {
     this.error.set(false)
 
     let new_character: Character = {
-      id: this.dragonballService.characters().length,
+      id: this.dragonballService.characters().length + 1,
       name: this.name(),
       power: this.power()
     }
