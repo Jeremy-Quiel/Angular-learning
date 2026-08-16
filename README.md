@@ -11,5 +11,8 @@ y despues: `bun install`
 ## Correr la aplicacion:
 `ng serve`
 
+## Construir aplicacion para produccion
+`ng build`
+
 ## Crear un componenete:
 `ng g c (component)`
