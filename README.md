@@ -24,7 +24,7 @@
 `ng g c (component)`
 
 ## Crear Angular-environment:
-`ng g environment`
+`ng g environments`
 
 ## Utilidades:
 - `Tailwindcss`: Plantillas css
