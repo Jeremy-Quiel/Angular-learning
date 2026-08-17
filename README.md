@@ -27,4 +27,4 @@
 ## Utilidades:
 - `Tailwindcss`: Plantillas css
 
-- `Cloudflare`: iconos
+- `Fontawesome`: iconos
