@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from '@environments/environment';
-import { GiphyResponse } from '../interfaces/Giphy.interfaces';
+import type { GiphyResponse } from '../interfaces/Giphy.interface';
 
 @Injectable({providedIn: 'root'})
 export class GifsService {
@@ -14,6 +14,7 @@ export class GifsService {
 
   requestForTrendingGifs(){
     // Hacer peticion http que regresa un GiphyResponse
+    // Peticion GET el URL + parametros
     this.http.get<GiphyResponse>('https://api.giphy.com/v1/gifs/trending', {
       params: {
         api_key: environment.giphyApiKey,
