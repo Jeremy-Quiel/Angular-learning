@@ -14,6 +14,7 @@ export class GifsService {
 
   requestForTrendingGifs(){
     // Hacer peticion http que regresa un GiphyResponse
+    // Peticion GET el URL + parametros
     this.http.get<GiphyResponse>('https://api.giphy.com/v1/gifs/trending', {
       params: {
         api_key: environment.giphyApiKey,
