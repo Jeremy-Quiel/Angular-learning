@@ -4,9 +4,9 @@
 `ng new (nombre_proyecto)`
 
 ## Usar bun para acelerar dependencias:
-dentro del proyecto hacer: `rm -rf node_modules`
+- dentro del proyecto hacer: `rm -rf node_modules`
 
-y despues: `bun install`
+- y despues: `bun install`
 
 ## Correr la aplicacion:
 `ng serve`
@@ -22,3 +22,9 @@ y despues: `bun install`
 
 ## Crear un componenete:
 `ng g c (component)`
+
+
+## Utilidades:
+- `Tailwindcss`: Plantillas css
+
+- `Cloudflare`: iconos
