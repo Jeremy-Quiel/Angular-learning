@@ -10,8 +10,8 @@ export class GifsService {
   
   private http = inject(HttpClient) // objeto http para crear request (POST, GET, DELETE, etc...)
 
-
   trendingGifs = signal<Gif[]>([])
+  searchGifs = signal<Gif[]>([])
 
   constructor(){
     this.requestForTrendingGifs()
@@ -27,13 +27,40 @@ export class GifsService {
       },
     }).subscribe(
       (r) => {
-        // r.data es el json del response
-        const gifs = GifMapper.giphyListToGifList(r.data)
-        this.trendingGifs.set(gifs)
-        console.log(gifs)
+        this.setGifs(r)
       },
     );
 
+  }
+
+  requestForSearchGifs(query: string) {
+    this.http.get<GiphyResponse>('https://api.giphy.com/v1/gifs/search', {
+      params: {
+        api_key: environment.giphyApiKey,
+        q: query,
+        limit: 20,
+      }
+    }).subscribe(
+      (r) => {
+        this.setGifs(r, "search")
+      },
+    );
+
+  }
+
+  private setGifs(response: GiphyResponse, gifs_type: string = "trending"){
+    // item.data es el json del response
+    const gifs = GifMapper.giphyListToGifList(response.data)
+
+    if (gifs_type == "trending"){
+      this.trendingGifs.set(gifs)
+    }
+
+    if (gifs_type == "search"){
+      this.searchGifs.set(gifs)
+    }
+
+    console.log(gifs)
   }
   
 }
