@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, computed, inject, input} from '@angular/core';
 import { GifsListItemComponent } from "../gifs-list-item.component/gifs-list-item.component";
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
@@ -10,7 +10,6 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
 export class GifsListComponent {
  
   gifsService = inject(GifsService)
-
-  gifs = this.gifsService.trendingGifs
+  gifs_type = input.required<string>()
 
 }

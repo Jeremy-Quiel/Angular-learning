@@ -10,6 +10,8 @@ export class GifsService {
   
   private http = inject(HttpClient) // objeto http para crear request (POST, GET, DELETE, etc...)
 
+  valid_type_gifs = ["trending", "search"]
+
   trendingGifs = signal<Gif[]>([])
   searchGifs = signal<Gif[]>([])
 
@@ -17,13 +19,14 @@ export class GifsService {
     this.requestForTrendingGifs()
   }
 
+  limit = 5
   requestForTrendingGifs(){
     // Hacer peticion http que regresa un GiphyResponse
     // Peticion GET el URL + parametros
     this.http.get<GiphyResponse>('https://api.giphy.com/v1/gifs/trending', {
       params: {
         api_key: environment.giphyApiKey,
-        limit: 20,
+        limit: this.limit,
       },
     }).subscribe(
       (r) => {
@@ -38,7 +41,7 @@ export class GifsService {
       params: {
         api_key: environment.giphyApiKey,
         q: query,
-        limit: 20,
+        limit: this.limit,
       }
     }).subscribe(
       (r) => {
@@ -47,6 +50,7 @@ export class GifsService {
     );
 
   }
+  
 
   private setGifs(response: GiphyResponse, gifs_type: string = "trending"){
     // item.data es el json del response
@@ -61,6 +65,19 @@ export class GifsService {
     }
 
     console.log(gifs)
+  }
+
+  getGifs(gifs_type: string): WritableSignal<Gif[]>{
+    if (gifs_type == "trending"){
+      return this.trendingGifs
+    }
+
+    if (gifs_type == "search"){
+      return this.searchGifs
+    }
+
+    return signal<Gif[]>([])
+    
   }
   
 }
